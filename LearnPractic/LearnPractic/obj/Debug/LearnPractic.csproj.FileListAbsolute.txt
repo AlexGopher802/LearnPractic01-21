@@ -1,0 +1,10 @@
+D:\Work\LearnPractic\LearnPractic\LearnPractic\bin\Debug\LearnPractic.exe.config
+D:\Work\LearnPractic\LearnPractic\LearnPractic\bin\Debug\LearnPractic.exe
+D:\Work\LearnPractic\LearnPractic\LearnPractic\bin\Debug\LearnPractic.pdb
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.csprojAssemblyReference.cache
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.Form1.resources
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.Properties.Resources.resources
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.csproj.GenerateResource.cache
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.csproj.CoreCompileInputs.cache
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.exe
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.pdb
