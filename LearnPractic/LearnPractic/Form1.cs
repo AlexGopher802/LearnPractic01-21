@@ -13,22 +13,64 @@ namespace LearnPractic
 {
     public partial class Form1 : Form
     {
-        
+        SqlConnection con;
+        SqlDataAdapter da;
+        SqlCommand cmd;
+        DataSet ds;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void buttonAuth_Click(object sender, EventArgs e)
         {
-            GetList();
+            try
+            {
+                con = new SqlConnection(@"Data Source=localhost;Initial Catalog=LearnPractic;Integrated Security=True");
+                //da = new SqlDataAdapter($"select * from Employee where login='{textBoxLogin.Text}' and password='{textBoxPassword.Text}'", con);
+                da = new SqlDataAdapter(
+                    "select " +
+                    "Employee.login as Login, " +
+                    "Employee.password as Password, " +
+                    "Private_Info.first_name as First_Name, " +
+                    "Private_Info.last_name as Last_Name, " +
+                    "Private_Info.patronymic as Patronymic, " +
+                    "Post.name as Post " +
+                    "from Employee " +
+                    "left join Private_Info on Employee.id_private_info = Private_Info.id " +
+                    "left join Post on Employee.id_post = Post.id " +
+                    $"where login='{textBoxLogin.Text}' and password='{textBoxPassword.Text}'"
+                    , con);
+
+                ds = new DataSet();
+                con.Open();
+                da.Fill(ds, "Employee");
+                con.Close();
+                if(ds.Tables["Employee"].Rows[0].ItemArray[0] != null)
+                {
+                    main m = new main();
+                    m.emp = new main.Employees(ds.Tables["Employee"].Rows[0].ItemArray[2].ToString(), ds.Tables["Employee"].Rows[0].ItemArray[3].ToString(), ds.Tables["Employee"].Rows[0].ItemArray[4].ToString(), ds.Tables["Employee"].Rows[0].ItemArray[5].ToString());
+                    this.Hide();
+                    m.Show();
+                }
+            }
+            catch(Exception excep)
+            {
+                MessageBox.Show(excep.Message, "Ошибка");
+                con.Close();
+            }
+            
         }
 
-        SqlConnection con;
-        SqlDataAdapter da;
-        SqlCommand cmd;
-        DataSet ds;
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        /*
+        
 
         void GetList()
         {
@@ -85,10 +127,6 @@ namespace LearnPractic
             con.Close();
             GetList();
         }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        */
     }
 }

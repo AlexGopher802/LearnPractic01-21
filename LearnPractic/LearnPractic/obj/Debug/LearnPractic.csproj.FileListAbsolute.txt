@@ -8,3 +8,4 @@ D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.csproj.Gen
 D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.csproj.CoreCompileInputs.cache
 D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.exe
 D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.pdb
+D:\Work\LearnPractic\LearnPractic\LearnPractic\obj\Debug\LearnPractic.main.resources
