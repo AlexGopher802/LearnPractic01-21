@@ -29,7 +29,6 @@ namespace LearnPractic
             try
             {
                 con = new SqlConnection(@"Data Source=localhost;Initial Catalog=LearnPractic;Integrated Security=True");
-                //da = new SqlDataAdapter($"select * from Employee where login='{textBoxLogin.Text}' and password='{textBoxPassword.Text}'", con);
                 da = new SqlDataAdapter(
                     "select " +
                     "Employee.login as Login, " +
